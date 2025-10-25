@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PowerPoint Shortcuts</title>
+    
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    
+    <!-- Fluent UI Fabric -->
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />
+    
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="taskpane.css" />
+    
+    <!-- Shared utilities -->
+    <script type="text/javascript" src="../shared/powerpoint-utils.js"></script>
+    <script type="text/javascript" src="../shared/professional-functions.js"></script>
+</head>
+
+<body class="ms-font-m ms-welcome ms-Fabric">
+    <header class="ms-welcome__header ms-bgColor-neutralLighter">
+        <img width="90" height="90" src="../../assets/logo.png" alt="PowerPoint Productivity" title="PowerPoint Productivity" />
+        <h1 class="ms-font-su">PowerPoint Shortcuts</h1>
+        <p class="ms-font-l">Enhance your PowerPoint productivity with custom keyboard shortcuts and tools.</p>
+    </header>
+    
+    <main id="app-body" class="ms-welcome__main">
+        <!-- Navigation Tabs -->
+        <div class="tab-container">
+            <button class="tab-button active" onclick="showTab('shortcuts')">Shortcuts</button>
+            <button class="tab-button" onclick="showTab('elements')">Elements</button>
+            <button class="tab-button" onclick="showTab('formatting')">Formatting</button>
+            <button class="tab-button" onclick="showTab('help')">Help</button>
+        </div>
+        
+        <!-- Shortcuts Tab -->
+        <div id="shortcuts-tab" class="tab-content active">
+            <h2 class="ms-font-xl">Keyboard Shortcuts</h2>
+            <p class="ms-font-m">Quick access to all productivity shortcuts:</p>
+            
+            <div class="shortcut-section">
+                <h3 class="ms-font-l">Text & Objects</h3>
+                <div class="shortcut-item">
+                    <span class="shortcut-key">Ctrl+Alt+T</span>
+                    <span class="shortcut-desc">Paste unformatted text</span>
+                    <button class="ms-Button ms-Button--small" onclick="executeShortcut('PasteUnformatted')">Run</button>
+                </div>
+                <div class="shortcut-item">
+                    <span class="shortcut-key">Shift+Alt+Z</span>
+                    <span class="shortcut-desc">Text to autoshape</span>
+                    <button class="ms-Button ms-Button--small" onclick="executeShortcut('TextToAutoshape')">Run</button>
+                </div>
+                <div class="shortcut-item">
+                    <span class="shortcut-key">Alt+Ctrl+J</span>
+                    <span class="shortcut-desc">Split/join textboxes</span>
+                    <button class="ms-Button ms-Button--small" onclick="executeShortcut('SplitJoinTextboxes')">Run</button>
+                </div>
+            </div>
+            
+            <div class="shortcut-section">
+                <h3 class="ms-font-l">Alignment</h3>
+                <div class="shortcut-item">
+                    <span class="shortcut-key">Shift+Alt+E</span>
+                    <span class="shortcut-desc">Make same width</span>
+                    <button class="ms-Button ms-Button--small" onclick="executeShortcut('MakeSameWidth')">Run</button>
+                </div>
+                <div class="shortcut-item">
+                    <span class="shortcut-key">Ctrl+Alt+C</span>
+                    <span class="shortcut-desc">Align center</span>
+                    <button class="ms-Button ms-Button--small" onclick="executeShortcut('AlignCenter')">Run</button>
+                </div>
+                <div class="shortcut-item">
+                    <span class="shortcut-key">Ctrl+Alt+L</span>
+                    <span class="shortcut-desc">Align left</span>
+                    <button class="ms-Button ms-Button--small" onclick="executeShortcut('AlignLeft')">Run</button>
+                </div>
+                <div class="shortcut-item">
+                    <span class="shortcut-key">Ctrl+Alt+R</span>
+                    <span class="shortcut-desc">Align right</span>
+                    <button class="ms-Button ms-Button--small" onclick="executeShortcut('AlignRight')">Run</button>
+                </div>
+                <div class="shortcut-item">
+                    <span class="shortcut-key">Alt+Shift+H</span>
+                    <span class="shortcut-desc">Distribute horizontally</span>
+                    <button class="ms-Button ms-Button--small" onclick="executeShortcut('DistributeHorizontally')">Run</button>
+                </div>
+                <div class="shortcut-item">
+                    <span class="shortcut-key">Alt+Shift+V</span>
+                    <span class="shortcut-desc">Distribute vertically</span>
+                    <button class="ms-Button ms-Button--small" onclick="executeShortcut('DistributeVertically')">Run</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Elements Tab -->
+        <div id="elements-tab" class="tab-content">
+            <h2 class="ms-font-xl">Productivity Elements</h2>
+            <p class="ms-font-m">Insert professional elements:</p>
+            
+            <div class="element-grid">
+                <button class="element-button ms-Button ms-Button--primary" onclick="executeShortcut('InsertFootnote')">
+                    <div class="element-icon">📝</div>
+                    <div class="element-label">Footnote</div>
+                    <div class="element-shortcut">Ctrl+Alt+F</div>
+                </button>
+                
+                <button class="element-button ms-Button ms-Button--primary" onclick="executeShortcut('InsertLegend')">
+                    <div class="element-icon">📊</div>
+                    <div class="element-label">Legend</div>
+                    <div class="element-shortcut">Ctrl+Alt+G</div>
+                </button>
+                
+                <button class="element-button ms-Button ms-Button--primary" onclick="executeShortcut('InsertSticker')">
+                    <div class="element-icon">🏷️</div>
+                    <div class="element-label">Sticker</div>
+                    <div class="element-shortcut">Ctrl+Alt+S</div>
+                </button>
+                
+                <button class="element-button ms-Button ms-Button--primary" onclick="createSlideTemplate('content')">
+                    <div class="element-icon">📄</div>
+                    <div class="element-label">Content Template</div>
+                    <div class="element-shortcut">Click to insert</div>
+                </button>
+                
+                <button class="element-button ms-Button ms-Button--primary" onclick="createSlideTemplate('chart')">
+                    <div class="element-icon">📈</div>
+                    <div class="element-label">Chart Template</div>
+                    <div class="element-shortcut">Click to insert</div>
+                </button>
+                
+                <button class="element-button ms-Button ms-Button--primary" onclick="createChartPlaceholder()">
+                    <div class="element-icon">📉</div>
+                    <div class="element-label">Chart Placeholder</div>
+                    <div class="element-shortcut">Click to insert</div>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Formatting Tab -->
+        <div id="formatting-tab" class="tab-content">
+            <h2 class="ms-font-xl">Professional Formatting</h2>
+            <p class="ms-font-m">Apply professional formatting:</p>
+            
+            <div class="formatting-section">
+                <h3 class="ms-font-l">Colors</h3>
+                <div class="color-palette">
+                    <div class="color-swatch" style="background-color: #0078D4" onclick="applyColor('#0078D4')" title="Blue"></div>
+                    <div class="color-swatch" style="background-color: #107C10" onclick="applyColor('#107C10')" title="Green"></div>
+                    <div class="color-swatch" style="background-color: #FF4B4B" onclick="applyColor('#FF4B4B')" title="Red"></div>
+                    <div class="color-swatch" style="background-color: #8E44AD" onclick="applyColor('#8E44AD')" title="Purple"></div>
+                    <div class="color-swatch" style="background-color: #F39C12" onclick="applyColor('#F39C12')" title="Orange"></div>
+                </div>
+                <button class="ms-Button ms-Button--default" onclick="executeShortcut('CycleAccentColors')">
+                    Cycle Colors (Shift+Alt+A)
+                </button>
+            </div>
+            
+            <div class="formatting-section">
+                <h3 class="ms-font-l">Actions</h3>
+                <button class="ms-Button ms-Button--default" onclick="executeShortcut('ResetElements')">
+                    Reset to Defaults (Ctrl+Alt+Y)
+                </button>
+                <button class="ms-Button ms-Button--default" onclick="applyProfessionalGrid()">
+                    Apply Professional Grid
+                </button>
+                <button class="ms-Button ms-Button--default" onclick="executeShortcut('GreenPrint')">
+                    Green Print (Ctrl+Alt+P)
+                </button>
+            </div>
+        </div>
+        
+        <!-- Help Tab -->
+        <div id="help-tab" class="tab-content">
+            <h2 class="ms-font-xl">Help & Information</h2>
+            
+            <div class="help-section">
+                <h3 class="ms-font-l">About This Add-in</h3>
+                <p class="ms-font-m">
+                    The PowerPoint Shortcuts add-in provides quick access to professional 
+                    formatting, elements, and productivity tools. Use keyboard shortcuts or the buttons 
+                    in this panel to enhance your PowerPoint workflow.
+                </p>
+            </div>
+            
+            <div class="help-section">
+                <h3 class="ms-font-l">Limitations</h3>
+                <p class="ms-font-m">
+                    Due to Office Add-in restrictions, some shortcuts cannot be implemented:
+                </p>
+                <ul class="ms-font-s">
+                    <li>Ctrl+1, Ctrl+2, Ctrl+6, Ctrl+0 (single digit keys)</li>
+                    <li>Alt+Q (missing second modifier)</li>
+                    <li>Function key combinations (Fn+F2, etc.)</li>
+                    <li>Ctrl+T (browser shortcut conflict)</li>
+                </ul>
+            </div>
+            
+            <div class="help-section">
+                <h3 class="ms-font-l">Alternative Solutions</h3>
+                <p class="ms-font-m">
+                    For unsupported shortcuts, consider using:
+                </p>
+                <ul class="ms-font-s">
+                    <li><strong>Windows:</strong> AutoHotkey for custom shortcuts</li>
+                    <li><strong>Mac:</strong> Keyboard Maestro for automation</li>
+                    <li><strong>All platforms:</strong> Use the buttons in this panel</li>
+                </ul>
+            </div>
+            
+            <div class="help-section">
+                <h3 class="ms-font-l">Quick Reference</h3>
+                <button class="ms-Button ms-Button--primary" onclick="executeShortcut('ShowQuickKeys')">
+                    Show All Shortcuts (Ctrl+Alt+Q)
+                </button>
+            </div>
+            
+            <div class="help-section">
+                <h3 class="ms-font-l">Version Information</h3>
+                <p class="ms-font-s">
+                    PowerPoint Shortcuts v1.0.0<br>
+                    Compatible with PowerPoint 2016 and later
+                </p>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Status bar -->
+    <footer class="status-bar">
+        <div id="status-message" class="ms-font-s">Ready</div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script type="text/javascript" src="taskpane.js"></script>
+</body>
+</html>
+

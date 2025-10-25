@@ -1,0 +1,302 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.16",
+  "version": "1.0.0",
+  "id": "12345678-1234-1234-1234-123456789012",
+  "packageName": "com.productivity.powerpoint.shortcuts",
+  "developer": {
+    "name": "PowerPoint Productivity Tools",
+    "websiteUrl": "https://github.com/MatteoDome/macpptplugin",
+    "privacyUrl": "https://github.com/MatteoDome/macpptplugin",
+    "termsOfUseUrl": "https://github.com/MatteoDome/macpptplugin"
+  },
+  "name": {
+    "short": "PowerPoint Shortcuts",
+    "full": "PowerPoint Productivity Keyboard Shortcuts Add-in"
+  },
+  "description": {
+    "short": "Custom keyboard shortcuts for PowerPoint workflows",
+    "full": "Enhance your PowerPoint productivity with custom keyboard shortcuts for formatting, alignment, and content insertion."
+  },
+  "icons": {
+    "outline": "https://matteodome.github.io/macpptplugin/assets/icon-outline.png",
+    "color": "https://matteodome.github.io/macpptplugin/assets/icon-color.png"
+  },
+  "accentColor": "#0078D4",
+  "extensions": [
+    {
+      "requirements": {
+        "capabilities": [
+          {
+            "name": "SharedRuntime",
+            "minVersion": "1.1"
+          }
+        ],
+        "scopes": ["https://graph.microsoft.com/Files.ReadWrite"]
+      },
+      "runtimes": [
+        {
+          "id": "ProductivityRuntime",
+          "type": "general",
+      "code": {
+        "page": "https://matteodome.github.io/macpptplugin/src/commands/commands.html"
+      },
+          "lifetime": "long",
+          "actions": [
+            {
+              "id": "PasteUnformatted",
+              "type": "executeFunction",
+              "displayName": "Paste unformatted text"
+            },
+            {
+              "id": "TextToAutoshape",
+              "type": "executeFunction",
+              "displayName": "Convert text to autoshape"
+            },
+            {
+              "id": "SplitJoinTextboxes",
+              "type": "executeFunction",
+              "displayName": "Split or join textboxes"
+            },
+            {
+              "id": "MakeSameWidth",
+              "type": "executeFunction",
+              "displayName": "Make objects same width"
+            },
+            {
+              "id": "AlignCenter",
+              "type": "executeFunction",
+              "displayName": "Align objects center"
+            },
+            {
+              "id": "AlignLeft",
+              "type": "executeFunction",
+              "displayName": "Align objects left"
+            },
+            {
+              "id": "AlignRight",
+              "type": "executeFunction",
+              "displayName": "Align objects right"
+            },
+            {
+              "id": "AlignMiddle",
+              "type": "executeFunction",
+              "displayName": "Align objects middle"
+            },
+            {
+              "id": "DistributeHorizontally",
+              "type": "executeFunction",
+              "displayName": "Distribute objects horizontally"
+            },
+            {
+              "id": "DistributeVertically",
+              "type": "executeFunction",
+              "displayName": "Distribute objects vertically"
+            },
+            {
+              "id": "InsertFootnote",
+              "type": "executeFunction",
+              "displayName": "Insert footnote"
+            },
+            {
+              "id": "InsertLegend",
+              "type": "executeFunction",
+              "displayName": "Insert legend"
+            },
+            {
+              "id": "InsertSticker",
+              "type": "executeFunction",
+              "displayName": "Insert sticker"
+            },
+            {
+              "id": "CycleAccentColors",
+              "type": "executeFunction",
+              "displayName": "Cycle through accent colors"
+            },
+            {
+              "id": "GreenPrint",
+              "type": "executeFunction",
+              "displayName": "Export with green theme"
+            },
+            {
+              "id": "ShowQuickKeys",
+              "type": "executeFunction",
+              "displayName": "Show quick keys"
+            },
+            {
+              "id": "ResetElements",
+              "type": "executeFunction",
+              "displayName": "Reset slide elements"
+            },
+            {
+              "id": "ShowTaskpane",
+              "type": "executeFunction",
+              "displayName": "Show shortcuts panel"
+            }
+          ]
+        }
+      ],
+      "keyboardShortcuts": [
+        {
+          "requirements": {
+            "capabilities": [
+              {
+                "name": "SharedRuntime",
+                "minVersion": "1.1"
+              }
+            ]
+          },
+          "shortcuts": [
+            {
+              "key": {
+                "default": "Ctrl+Alt+T"
+              },
+              "actionId": "PasteUnformatted"
+            },
+            {
+              "key": {
+                "default": "Shift+Alt+Z"
+              },
+              "actionId": "TextToAutoshape"
+            },
+            {
+              "key": {
+                "default": "Alt+Ctrl+J"
+              },
+              "actionId": "SplitJoinTextboxes"
+            },
+            {
+              "key": {
+                "default": "Shift+Alt+E"
+              },
+              "actionId": "MakeSameWidth"
+            },
+            {
+              "key": {
+                "default": "Ctrl+Alt+C"
+              },
+              "actionId": "AlignCenter"
+            },
+            {
+              "key": {
+                "default": "Ctrl+Alt+L"
+              },
+              "actionId": "AlignLeft"
+            },
+            {
+              "key": {
+                "default": "Ctrl+Alt+R"
+              },
+              "actionId": "AlignRight"
+            },
+            {
+              "key": {
+                "default": "Ctrl+Alt+M"
+              },
+              "actionId": "AlignMiddle"
+            },
+            {
+              "key": {
+                "default": "Alt+Shift+H"
+              },
+              "actionId": "DistributeHorizontally"
+            },
+            {
+              "key": {
+                "default": "Alt+Shift+V"
+              },
+              "actionId": "DistributeVertically"
+            },
+            {
+              "key": {
+                "default": "Ctrl+Alt+F"
+              },
+              "actionId": "InsertFootnote"
+            },
+            {
+              "key": {
+                "default": "Ctrl+Alt+G"
+              },
+              "actionId": "InsertLegend"
+            },
+            {
+              "key": {
+                "default": "Ctrl+Alt+S"
+              },
+              "actionId": "InsertSticker"
+            },
+            {
+              "key": {
+                "default": "Shift+Alt+A"
+              },
+              "actionId": "CycleAccentColors"
+            },
+            {
+              "key": {
+                "default": "Ctrl+Alt+P"
+              },
+              "actionId": "GreenPrint"
+            },
+            {
+              "key": {
+                "default": "Ctrl+Alt+Q"
+              },
+              "actionId": "ShowQuickKeys"
+            },
+            {
+              "key": {
+                "default": "Ctrl+Alt+Y"
+              },
+              "actionId": "ResetElements"
+            },
+            {
+              "key": {
+                "default": "Ctrl+Alt+K"
+              },
+              "actionId": "ShowTaskpane"
+            }
+          ]
+        }
+      ],
+      "ribbons": [
+        {
+          "contexts": ["powerPointPresentation"],
+          "tabs": [
+            {
+              "builtInTabId": "TabHome",
+              "groups": [
+                {
+                  "id": "ProductivityGroup",
+                  "label": "Productivity Tools",
+                  "controls": [
+                    {
+                      "id": "TaskpaneButton",
+                      "type": "button",
+                      "label": "PowerPoint Shortcuts",
+                      "icons": [
+                        {
+                          "size": 16,
+                          "sourceLocation": "https://matteodome.github.io/macpptplugin/assets/icon-16.png"
+                        },
+                        {
+                          "size": 32,
+                          "sourceLocation": "https://matteodome.github.io/macpptplugin/assets/icon-32.png"
+                        }
+                      ],
+                      "supertip": {
+                        "title": "PowerPoint Shortcuts",
+                        "description": "Open the PowerPoint keyboard shortcuts panel"
+                      },
+                      "actionId": "ShowTaskpane"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
