@@ -29,10 +29,10 @@ Visit these URLs to make sure they work:
 - Commands: https://matteodome.github.io/macpptplugin/src/commands/commands.html
 
 ### 4. Install in PowerPoint
-1. Download the `manifest.json` file from your repository
+1. Download the `manifest.xml` file from your repository
 2. Open PowerPoint for Mac
 3. Go to **Insert** → **My Add-ins** → **Upload My Add-in**
-4. Select the `manifest.json` file
+4. Select the `manifest.xml` file
 5. The add-in should appear in your ribbon!
 
 ## Your Add-in URLs
@@ -40,16 +40,19 @@ Visit these URLs to make sure they work:
 Once GitHub Pages is enabled, your add-in will be available at:
 - **Repository**: https://github.com/MatteoDome/macpptplugin
 - **Live site**: https://matteodome.github.io/macpptplugin
-- **Manifest**: https://matteodome.github.io/macpptplugin/manifest.json
+- **Manifest**: https://matteodome.github.io/macpptplugin/manifest.xml
 
 ## Features Available
 
 ### Keyboard Shortcuts
 - `Ctrl+Alt+T` - Paste unformatted text
 - `Shift+Alt+Z` - Convert text to autoshape
+- `Shift+Alt+E` - Make same width
+- `Shift+Alt+H` - Make same height
 - `Ctrl+Alt+C` - Align center
 - `Ctrl+Alt+L` - Align left
 - `Ctrl+Alt+R` - Align right
+- `Alt+Shift+D` - Distribute horizontally
 - `Ctrl+Alt+F` - Insert footnote
 - `Ctrl+Alt+S` - Insert sticker
 - And many more!
@@ -69,8 +72,8 @@ Once GitHub Pages is enabled, your add-in will be available at:
 
 ### If PowerPoint won't load the add-in:
 1. Verify the URLs work in your browser
-2. Check that manifest.json is valid
-3. Make sure you downloaded the latest manifest.json
+2. Check that manifest.xml is valid
+3. Make sure you downloaded the latest manifest.xml
 
 ### If you get icon errors:
 The placeholder icons I created are empty files. You can:
@@ -99,7 +102,7 @@ To update later:
 
 If you need help:
 1. Check the URLs work in your browser
-2. Validate manifest.json at jsonlint.com
+2. Validate manifest.xml using Office Add-in validator
 3. Look at browser console for errors
 
 **Your add-in is ready to go! Just enable GitHub Pages and install in PowerPoint.** 🚀

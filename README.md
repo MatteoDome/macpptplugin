@@ -21,16 +21,16 @@ A productivity-focused PowerPoint add-in that provides custom keyboard shortcuts
 
 ### Method 1: GitHub Pages (Recommended)
 1. Enable GitHub Pages for this repository
-2. Download the `manifest.json` file
+2. Download the `manifest.xml` file
 3. Open PowerPoint
 4. Go to **Insert** → **My Add-ins** → **Upload My Add-in**
-5. Select the `manifest.json` file
+5. Select the `manifest.xml` file
 
 ### Method 2: Local Development
 1. Clone this repository
 2. Run a local web server (e.g., `python -m http.server 8000`)
-3. Update manifest.json URLs to point to localhost
-4. Upload manifest.json to PowerPoint
+3. Update manifest.xml URLs to point to localhost
+4. Upload manifest.xml to PowerPoint
 
 ## Available Shortcuts
 
@@ -40,11 +40,12 @@ A productivity-focused PowerPoint add-in that provides custom keyboard shortcuts
 | `Shift+Alt+Z` | Convert text to autoshape |
 | `Alt+Ctrl+J` | Split/join textboxes |
 | `Shift+Alt+E` | Make objects same width |
+| `Shift+Alt+H` | Make objects same height |
 | `Ctrl+Alt+C` | Align center |
 | `Ctrl+Alt+L` | Align left |
 | `Ctrl+Alt+R` | Align right |
 | `Ctrl+Alt+M` | Align middle |
-| `Alt+Shift+H` | Distribute horizontally |
+| `Alt+Shift+D` | Distribute horizontally |
 | `Alt+Shift+V` | Distribute vertically |
 | `Ctrl+Alt+F` | Insert footnote |
 | `Ctrl+Alt+G` | Insert legend |
@@ -73,7 +74,7 @@ Due to Office Add-in platform restrictions, some shortcuts cannot be implemented
 
 ### File Structure
 ```
-├── manifest.json          # Add-in manifest
+├── manifest.xml           # Add-in manifest
 ├── src/
 │   ├── commands/          # Keyboard shortcut implementations
 │   ├── taskpane/          # User interface
@@ -86,7 +87,7 @@ No build process required - this is a vanilla JavaScript add-in.
 
 ### Testing
 1. Start local web server
-2. Update manifest.json with local URLs
+2. Update manifest.xml with local URLs
 3. Sideload in PowerPoint for testing
 
 ## License

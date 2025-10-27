@@ -20,6 +20,7 @@ function registerKeyboardShortcuts() {
     
     // Alignment and Layout
     Office.actions.associate("MakeSameWidth", makeSameWidth);
+    Office.actions.associate("MakeSameHeight", makeSameHeight);
     Office.actions.associate("AlignCenter", alignCenter);
     Office.actions.associate("AlignLeft", alignLeft);
     Office.actions.associate("AlignRight", alignRight);
@@ -204,6 +205,36 @@ async function makeSameWidth() {
     } catch (error) {
         console.error("Error making same width:", error);
         showNotification("Error: Could not make objects same width", "error");
+        return error.code;
+    }
+}
+
+async function makeSameHeight() {
+    try {
+        await PowerPoint.run(async (context) => {
+            const slide = context.presentation.getSelectedSlides().getItemAt(0);
+            const shapes = slide.shapes;
+            shapes.load("items");
+            
+            await context.sync();
+            
+            const selectedShapes = shapes.items.filter(shape => shape.id); // Get all shapes for demo
+            
+            if (selectedShapes.length > 1) {
+                const referenceHeight = selectedShapes[0].height;
+                
+                for (let i = 1; i < selectedShapes.length; i++) {
+                    selectedShapes[i].height = referenceHeight;
+                }
+                
+                await context.sync();
+            }
+        });
+        showNotification("Objects resized to same height");
+        return;
+    } catch (error) {
+        console.error("Error making same height:", error);
+        showNotification("Error: Could not make objects same height", "error");
         return error.code;
     }
 }
